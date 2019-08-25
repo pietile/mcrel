@@ -4,6 +4,8 @@
 
 ---
 
+[![npm version](https://badgen.net/npm/v/mcrel?color=56C838)](https://www.npmjs.com/package/mcrel)
+
 Mcrel is a state management library for React and TypeScript. The main idea is using type checking for
 doing deep updates so you can safely use good old [setState](https://reactjs.org/docs/react-component.html#setstate)-like
 API but with nesting. Mcrel checks statically that value of the update is a strict subset of the
