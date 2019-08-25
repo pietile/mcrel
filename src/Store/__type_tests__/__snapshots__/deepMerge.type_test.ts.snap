@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Array value type (type) should match snapshot 1`] = `"Type 'string' is not assignable to type 'number'."`;
+
+exports[`Custom Atomic value type (type) should match snapshot 1`] = `"Property 'a' is missing in type '{ type: string; subObject: { b: string; }; }' but required in type 'Pick<Atomic, \\"a\\" | \\"type\\" | \\"subObject\\">'."`;
+
+exports[`Field type (type) should match snapshot 1`] = `"Type 'number' is not assignable to type 'string'."`;
+
+exports[`Incorrect subObj (type) should match snapshot 1`] = `"Type 'number' is not assignable to type 'never'."`;
+
+exports[`Map key type (type) should match snapshot 1`] = `
+"Type 'Map<string, string>' is not assignable to type 'Pick<Map<number, string>, \\"set\\" | \\"forEach\\" | \\"entries\\" | \\"keys\\" | \\"values\\" | \\"clear\\" | \\"delete\\" | \\"get\\" | \\"has\\" | \\"size\\">'.
+  Types of property 'set' are incompatible.
+    Type '(key: string, value: string) => Map<string, string>' is not assignable to type '(key: number, value: string) => Map<number, string>'.
+      Types of parameters 'key' and 'key' are incompatible.
+        Type 'number' is not assignable to type 'string'."
+`;
+
+exports[`Map value type (type) should match snapshot 1`] = `"Type 'Map<number, number>' is missing the following properties from type 'Pick<number[], number | \\"map\\" | \\"length\\" | \\"toString\\" | \\"toLocaleString\\" | \\"pop\\" | \\"push\\" | \\"concat\\" | \\"join\\" | \\"reverse\\" | \\"shift\\" | \\"slice\\" | \\"sort\\" | \\"splice\\" | \\"unshift\\" | \\"indexOf\\" | ... 14 more ... | \\"includes\\">': map, length, pop, push, and 20 more."`;
+
+exports[`Pierce array wrong key type (type) should match snapshot 1`] = `
+"Type 'Pierce<string, { a: number; }>' is not assignable to type 'Pierce<number, Subset<SubState, { a: number; }, AtomicObject>>'.
+  Type 'string' is not assignable to type 'number'."
+`;
+
+exports[`Pierce array wrong value type (type) should match snapshot 1`] = `
+"Type 'Pierce<number, { b: null; }>' is not assignable to type 'Pierce<number, Subset<SubState, { b: null; }, AtomicObject>>'.
+  Type '{ b: null; }' is not assignable to type 'Subset<SubState, { b: null; }, AtomicObject>'.
+    Types of property 'b' are incompatible.
+      Type 'null' is not assignable to type 'never'."
+`;
+
+exports[`Pierce map wrong key type (type) should match snapshot 1`] = `
+"Type 'Pierce<number, { subObj: { b: number; }; }>' is not assignable to type 'Pierce<string, Subset<SubState, { subObj: { b: number; }; }, AtomicObject>>'.
+  Type 'number' is not assignable to type 'string'."
+`;
+
+exports[`Pierce map wrong value type (type) should match snapshot 1`] = `
+"Type 'Pierce<string, { subObj: { c: number; }; }>' is not assignable to type 'Pierce<string, Subset<SubState, { subObj: { c: number; }; }, AtomicObject>>'.
+  Type '{ subObj: { c: number; }; }' is not assignable to type 'Subset<SubState, { subObj: { c: number; }; }, AtomicObject>'.
+    Types of property 'subObj' are incompatible.
+      Type '{ c: number; }' is not assignable to type 'Subset<{ b: number; c?: string | undefined; }, { c: number; }, AtomicObject>'.
+        Types of property 'c' are incompatible.
+          Type 'number' is not assignable to type 'string | undefined'."
+`;
+
+exports[`Pierce wrong target (type) should match snapshot 1`] = `
+"Type 'Pierce<string, number>' is not assignable to type 'Subset<Atomic, Pierce<string, number>, AtomicObject>'.
+  Types of property 'id' are incompatible.
+    Type 'unique symbol' is not assignable to type 'never'."
+`;
+
+exports[`Set value type (type) should match snapshot 1`] = `
+"Type 'Set<boolean>' is not assignable to type 'Pick<Set<string | number>, \\"forEach\\" | \\"entries\\" | \\"keys\\" | \\"values\\" | \\"clear\\" | \\"delete\\" | \\"has\\" | \\"size\\" | \\"add\\">'.
+  Types of property 'forEach' are incompatible.
+    Type '(callbackfn: (value: boolean, value2: boolean, set: Set<boolean>) => void, thisArg?: any) => void' is not assignable to type '(callbackfn: (value: string | number, value2: string | number, set: Set<string | number>) => void, thisArg?: any) => void'.
+      Types of parameters 'callbackfn' and 'callbackfn' are incompatible.
+        Types of parameters 'value' and 'value' are incompatible.
+          Type 'boolean' is not assignable to type 'string | number'."
+`;
+
+exports[`Unknown field (type) should match snapshot 1`] = `"Type 'number' is not assignable to type 'never'."`;
+
+exports[`null to NonNullable (type) should match snapshot 1`] = `"Type 'null' is not assignable to type '{ c: number; }'."`;
+
+exports[`null to undefined (type) should match snapshot 1`] = `"Type 'null' is not assignable to type '{ d: number; } | undefined'."`;
+
+exports[`undefined to null (type) should match snapshot 1`] = `"Type 'undefined' is not assignable to type '{ d: number; } | null'."`;
+
+exports[`value to nullable obj (type) should match snapshot 1`] = `"Type 'string' is not assignable to type '{ d: number; } | null'."`;
+
+exports[`value to optional obj (type) should match snapshot 1`] = `"Type 'number' is not assignable to type '{ d: number; } | undefined'."`;

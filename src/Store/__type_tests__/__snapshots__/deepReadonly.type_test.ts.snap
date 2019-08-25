@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`const obj: ReadonlyState = {
+    a: 0,
+    subObj: {
+      b: sub,
+    },
+    array: [sub],
+    map: new Map([[sub, sub]]),
+    set: new Set([sub]),
+    readonlysubObj: {
+      c: sub,
+    },
+    readonlyArray: [sub],
+    readonlyMap: new Map([[sub, sub]]),
+    readonlySet: new Set([sub]),
+  } (type) should match snapshot 1`] = `"any"`;
+
+exports[`obj.a = 1 (type) should match snapshot 1`] = `"Cannot assign to 'a' because it is a read-only property."`;
+
+exports[`obj.readonlysubObj.c = sub (type) should match snapshot 1`] = `"Cannot assign to 'c' because it is a read-only property."`;
+
+exports[`obj.readonlysubObj.c.a = 1 (type) should match snapshot 1`] = `"Cannot assign to 'a' because it is a read-only property."`;
+
+exports[`obj.readonlysubObj.c.array.pop() (type) should match snapshot 1`] = `"Property 'pop' does not exist on type 'DeepReadonlyArray<string>'."`;
+
+exports[`obj.readonlysubObj.c.subObj.b = 1 (type) should match snapshot 1`] = `"Cannot assign to 'b' because it is a read-only property."`;
+
+exports[`obj.subObj.b = sub (type) should match snapshot 1`] = `"Cannot assign to 'b' because it is a read-only property."`;
+
+exports[`obj.subObj.b.a = 1 (type) should match snapshot 1`] = `"Cannot assign to 'a' because it is a read-only property."`;
+
+exports[`obj.subObj.b.array.pop() (type) should match snapshot 1`] = `"Property 'pop' does not exist on type 'DeepReadonlyArray<string>'."`;
+
+exports[`obj.subObj.b.subObj.b = 1 (type) should match snapshot 1`] = `"Cannot assign to 'b' because it is a read-only property."`;
+
+exports[`value.a = 1 (type) should match snapshot 1`] = `"Cannot assign to 'a' because it is a read-only property."`;
+
+exports[`value.a = 1 (type) should match snapshot 2`] = `"Cannot assign to 'a' because it is a read-only property."`;
+
+exports[`value.a = 1 (type) should match snapshot 3`] = `"Cannot assign to 'a' because it is a read-only property."`;
+
+exports[`value.a = 1 (type) should match snapshot 4`] = `"Cannot assign to 'a' because it is a read-only property."`;
