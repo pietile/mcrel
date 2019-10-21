@@ -25,7 +25,8 @@
     "build": "rimraf dist && tsc --build tsconfig.build.json",
     "test": "jest",
     "test:watch": "jest --watch",
-    "prettify": "import-sort --write 'src/**/*.{ts,tsx}' && prettier --write 'src/**/*.{ts,tsx}'"
+    "prettify": "import-sort --write 'src/**/*.{ts,tsx}' && prettier --write 'src/**/*.{ts,tsx}'",
+    "prepublish": "yarn build"
   },
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
