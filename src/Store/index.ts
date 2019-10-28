@@ -1,3 +1,3 @@
 export * from './deepReadonly';
 export * from './Store';
-export { pierce } from './deepMerge';
+export { DeepMergeAtomics, Pierce, Subset, pierce } from './deepMerge';
