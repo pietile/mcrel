@@ -24,7 +24,7 @@ export function useMcrelState<T>(
         source.current = deepMerge(source.current, arg(source.current as DeepReadonlyObject<T>));
       }
 
-      forceUpdate({});
+      forceUpdate();
     },
     [],
   );

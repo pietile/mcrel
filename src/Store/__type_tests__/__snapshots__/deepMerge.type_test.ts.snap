@@ -38,10 +38,8 @@ exports[`Pierce map wrong key type (type) should match snapshot 1`] = `
 exports[`Pierce map wrong value type (type) should match snapshot 1`] = `
 "Type 'Pierce<string, { subObj: { c: number; }; }>' is not assignable to type 'Pierce<string, Subset<SubState, { subObj: { c: number; }; }, AtomicObject>>'.
   Type '{ subObj: { c: number; }; }' is not assignable to type 'Subset<SubState, { subObj: { c: number; }; }, AtomicObject>'.
-    Types of property 'subObj' are incompatible.
-      Type '{ c: number; }' is not assignable to type 'Subset<{ b: number; c?: string | undefined; }, { c: number; }, AtomicObject>'.
-        Types of property 'c' are incompatible.
-          Type 'number' is not assignable to type 'string | undefined'."
+    The types of 'subObj.c' are incompatible between these types.
+      Type 'number' is not assignable to type 'string | undefined'."
 `;
 
 exports[`Pierce wrong target (type) should match snapshot 1`] = `

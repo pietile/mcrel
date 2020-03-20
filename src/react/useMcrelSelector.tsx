@@ -62,7 +62,7 @@ export function useMcrelSelector<S, R>(
       }
 
       state.selected = selected;
-      forceUpdate({});
+      forceUpdate();
     });
   }, [store, state]);
 

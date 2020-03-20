@@ -27,6 +27,7 @@ module.exports = {
     '@typescript-eslint/no-parameter-properties': 'off',
     '@typescript-eslint/no-use-before-define': ['error', { functions: false }],
     '@typescript-eslint/no-useless-constructor': 'error',
+    'import/extensions': 'off',
     'import/prefer-default-export': 'off',
     'no-continue': 'off',
     'no-empty-function': 'off',
