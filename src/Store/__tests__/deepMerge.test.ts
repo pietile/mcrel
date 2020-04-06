@@ -393,15 +393,24 @@ test('map', () => {
 
   const obj: State = {
     a: new Map([[1, 'a1']]),
-    b: new Map([[1, { c: 'c1' }], [2, { c: 'c2' }]]),
+    b: new Map([
+      [1, { c: 'c1' }],
+      [2, { c: 'c2' }],
+    ]),
   };
 
   const newA = new Map(obj.a);
   newA.set(2, 'a2');
 
   expect(deepMerge(obj, { a: newA })).toEqual({
-    a: new Map([[1, 'a1'], [2, 'a2']]),
-    b: new Map([[1, { c: 'c1' }], [2, { c: 'c2' }]]),
+    a: new Map([
+      [1, 'a1'],
+      [2, 'a2'],
+    ]),
+    b: new Map([
+      [1, { c: 'c1' }],
+      [2, { c: 'c2' }],
+    ]),
   });
 });
 
@@ -569,7 +578,10 @@ test('pierce primitive', () => {
 
   const obj: State = {
     array: [1, 2, 3],
-    map: new Map([[1, 'a'], [2, 'b']]),
+    map: new Map([
+      [1, 'a'],
+      [2, 'b'],
+    ]),
   };
 
   const newObj = deepMerge(obj, {
@@ -581,7 +593,12 @@ test('pierce primitive', () => {
   expect(newObj.array).toEqual([4, 2, 3]);
 
   expect(newObj.map).not.toBe(obj.map);
-  expect(newObj.map).toEqual(new Map([[1, 'a'], [2, 'bbb']]));
+  expect(newObj.map).toEqual(
+    new Map([
+      [1, 'a'],
+      [2, 'bbb'],
+    ]),
+  );
 });
 
 test('pierce object', () => {
@@ -599,8 +616,14 @@ test('pierce object', () => {
   }
 
   const obj: State = {
-    array: [{ a: 1, subObj: { b: 'b' } }, { a: 2, subObj: { b: 'b', c: 2 } }],
-    map: new Map([['a', { a: 1, subObj: { b: 'b' } }], ['b', { a: 2, subObj: { b: 'b', c: 2 } }]]),
+    array: [
+      { a: 1, subObj: { b: 'b' } },
+      { a: 2, subObj: { b: 'b', c: 2 } },
+    ],
+    map: new Map([
+      ['a', { a: 1, subObj: { b: 'b' } }],
+      ['b', { a: 2, subObj: { b: 'b', c: 2 } }],
+    ]),
   };
 
   const newObj = deepMerge(obj, {
@@ -609,11 +632,17 @@ test('pierce object', () => {
   });
 
   expect(newObj.array).not.toBe(obj.array);
-  expect(newObj.array).toEqual([{ a: 2, subObj: { b: 'b' } }, { a: 2, subObj: { b: 'b', c: 2 } }]);
+  expect(newObj.array).toEqual([
+    { a: 2, subObj: { b: 'b' } },
+    { a: 2, subObj: { b: 'b', c: 2 } },
+  ]);
 
   expect(newObj.map).not.toBe(obj.map);
   expect(newObj.map).toEqual(
-    new Map([['a', { a: 1, subObj: { b: 'b' } }], ['b', { a: 2, subObj: { b: 'bbb' } }]]),
+    new Map([
+      ['a', { a: 1, subObj: { b: 'b' } }],
+      ['b', { a: 2, subObj: { b: 'bbb' } }],
+    ]),
   );
 });
 
@@ -633,8 +662,14 @@ test('pierce excetions', () => {
   }
 
   const obj: State = {
-    array: [{ a: 1, subObj: { b: 'b' } }, { a: 2, subObj: { b: 'b', c: 2 } }],
-    map: new Map([['a', { a: 1, subObj: { b: 'b' } }], ['b', { a: 2, subObj: { b: 'b', c: 2 } }]]),
+    array: [
+      { a: 1, subObj: { b: 'b' } },
+      { a: 2, subObj: { b: 'b', c: 2 } },
+    ],
+    map: new Map([
+      ['a', { a: 1, subObj: { b: 'b' } }],
+      ['b', { a: 2, subObj: { b: 'b', c: 2 } }],
+    ]),
     falseMap: {} as any,
   };
 
