@@ -27,7 +27,7 @@ export function deepMerge<
 >(target: T, source: S, atomicGuards?: G): T {
   try {
     return deepMergeImpl(target, source, function isAtomicObject(value: object): boolean {
-      const knwonAtomic =
+      const knownAtomic =
         Array.isArray(value) ||
         value instanceof Date ||
         value instanceof Map ||
@@ -37,7 +37,7 @@ export function deepMerge<
         value instanceof WeakMap ||
         value instanceof WeakSet;
 
-      return knwonAtomic || (!!atomicGuards && atomicGuards.some((guard): boolean => guard(value)));
+      return knownAtomic || (!!atomicGuards && atomicGuards.some((guard): boolean => guard(value)));
     });
   } catch (error) {
     if (

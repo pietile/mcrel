@@ -10,13 +10,13 @@ export function connect<P, R extends object, S>(
   selector: Selector<S, R>,
   compareFunction: CompareFunction<R> = shallowEqual,
 ): FunctionComponent<P> {
-  function ConntectedComponent(props: P): JSX.Element {
+  function ConnectedComponent(props: P): JSX.Element {
     const data = useMcrelSelector<S, R>(selector, compareFunction);
 
     return <Component {...data} {...props} />;
   }
 
-  ConntectedComponent.displayName = `connected(${Component.displayName || Component.name})`;
+  ConnectedComponent.displayName = `connected(${Component.displayName || Component.name})`;
 
-  return hoistStatics(ConntectedComponent, Component);
+  return hoistStatics(ConnectedComponent, Component);
 }

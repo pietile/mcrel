@@ -18,7 +18,7 @@ export function deepMergeImpl(target: any, source: any, isAtomicObject: IsAtomic
   Object.entries<any>(source).forEach(([key, value]): void => {
     if (typeof result[key] === 'object' && result[key] !== null && !!value) {
       if (typeof value === 'object' && value.id === PierceID) {
-        result[key] = pierceMege(target[key], value, isAtomicObject);
+        result[key] = pierceMerge(target[key], value, isAtomicObject);
 
         return;
       }
@@ -37,7 +37,7 @@ export function deepMergeImpl(target: any, source: any, isAtomicObject: IsAtomic
 }
 
 // Piercing
-function pierceMege(target: any, pierce: Pierce<any, any>, isAtomicObject: IsAtomicObject): any {
+function pierceMerge(target: any, pierce: Pierce<any, any>, isAtomicObject: IsAtomicObject): any {
   if (Array.isArray(target)) {
     const result = Array.from(target);
 

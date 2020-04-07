@@ -1,6 +1,6 @@
 /**
  * Deep read only object
- * See https://github.com/microsoft/TypeScript/pull/21316s
+ * See https://github.com/microsoft/TypeScript/pull/21316
  */
 export type DeepReadonlyObject<T> = {
   readonly [P in keyof T]: T[P] extends object

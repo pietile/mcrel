@@ -6,7 +6,7 @@ export type Subscription<T> = (state: DeepReadonlyObject<T>) => void;
 
 export type Unsubscribe = () => void;
 
-// Readonlt stoore interface. Omits Atomics information.
+// Readonly store interface. Omits Atomics information.
 export interface ReadonlyStore<T> {
   getState(): DeepReadonlyObject<T>;
 
